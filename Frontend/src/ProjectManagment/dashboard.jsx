@@ -18,7 +18,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchMenuData = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/foods`);
+        const response = await axios.get(`${API_BASE_URL}/api/foods`);
         setMenuData(response.data);
       } catch (error) {
         console.error("Veri çekme hatası:", error);
@@ -36,7 +36,7 @@ function Dashboard() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/foods/createFood`,
+        `${API_BASE_URL}/api/foods/createFood`,
         {
           ...newFood,
           price: parseFloat(newFood.price),
@@ -59,7 +59,7 @@ function Dashboard() {
   const handleUpdate = async () => {
     try {
       const response = await axios.put(
-        `${API_BASE_URL}/foods/updateFood/${editFood._id}`,
+        `${API_BASE_URL}/api/foods/updateFood/${editFood._id}`,
         newFood
       );
       const updatedMenu = menuData.map((item) =>
@@ -77,7 +77,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_BASE_URL}/foods/deleteFood/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/foods/deleteFood/${id}`);
       setMenuData(menuData.filter((food) => food._id !== id));
       alert("Yiyecek başarıyla silindi!");
     } catch (error) {

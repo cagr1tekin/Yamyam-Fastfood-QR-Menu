@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 
 function FoodPage({ type }) {
   const [menus, setMenus] = useState([]);
@@ -10,7 +8,7 @@ function FoodPage({ type }) {
     const fetchMenus = async () => {
       try {
         const response = await axios.get(
-          `${API_BASE_URL}/foods?type=${type}`
+          `${API_BASE_URL}/api/foods?type=${type}`
         );
         setMenus(response.data);
       } catch (error) {
