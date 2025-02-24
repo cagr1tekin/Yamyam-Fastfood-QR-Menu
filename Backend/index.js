@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import { config } from 'dotenv';
 import db from './config/db.js';
 import foodRoutes from './routes/food.js';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 
 
