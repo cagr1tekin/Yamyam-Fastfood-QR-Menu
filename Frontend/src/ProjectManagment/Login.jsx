@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { password });
+      const response = await axios.post(`${API_BASE_URL}/api/login`, { password });
       
       if (response.status === 200) {
         // Başarılı giriş yaptıktan sonra localStorage'da 'isAuthenticated' değerini true olarak kaydet
