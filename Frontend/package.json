@@ -3,6 +3,7 @@
   "proxy": "http://localhost:5000",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://yamyam-fastfood-qr-menu-1.onrender.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
