@@ -1,0 +1,186 @@
+.App{
+    background-color: rgb(27, 23, 23);
+    width: 375px;
+    height: auto;
+}
+.categories{
+    background-color: rgb(204, 194, 153);
+    background-size: cover;    
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.categoriesOptions{
+    width: 100%;
+    height: 250px;
+    margin-top: 15px;
+    background-size: cover;
+    display: flex;
+    background-position: center;
+    align-items: end;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 120px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 300px solid rgba(27, 23, 23, 0.8);
+  }
+
+.categoriesOptions span{
+    position: absolute;
+    color: rgb(204, 194, 153);
+    font-size: 50px;
+    font-family: "ITC Souvenir", serif;
+    text-shadow: 4px 4px 4px rgb(0, 0, 0); 
+    display: flex;
+    padding-left: 15px;
+}
+
+#optionsMenus{
+    background-image: url(img/Burgers.jpg);    
+}
+#optionsBurritos{
+    background-image: url(img/Burittos.jpg);    
+}
+#optionsBurgers{
+    background-image: url(img/Burgers.jpg);
+}
+#optionsByProducts{
+    background-image: url(img/Sides.jpg);
+}
+#optionsDrinks{
+    background-image: url(img/Drinks.jpg);
+}
+#optionsSauces{
+    background-image: url(img/Sauces.jpg);
+}
+nav{
+    background-color: rgb(27, 23, 23);
+    width: 100%;
+    height: 126px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .LogoDiv{
+    height: 125px;
+    width: 300px;
+    position: relative;
+    overflow: visible;
+}
+
+nav .LogoDiv::before{
+    content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -10px;
+  width: 300px;
+  height: 160px;
+  background-image: url('img/Logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+footer{
+    background-color: rgb(27, 23, 23);
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+.menu{
+    background-color: rgb(204, 194, 153);
+    background-size: cover;    
+    width: 100%;
+    min-height: 475px;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    align-items: stretch;
+}
+.menuOptions{
+    background-color: rgb(238, 235, 221);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    border-radius: 5px;
+}
+.foodImg{
+    width: 100%; 
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 8 / 7;
+}
+.foodImg img{
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+    margin: 5%;
+}
+.foodDescription{
+  width: 100%;
+  text-align: center;
+  font-size: clamp(10px, 3.5vw, 13px);
+  color: rgb(83, 70, 70);
+  font-weight: 500;
+}
+.foodBottomContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4%;
+    padding-top: 0;
+    height: auto;
+    height: 30%;
+}
+.foodName{
+    width: auto;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    font-size: clamp(15px, 4.8vw, 19px);
+    color: rgb(119,0, 0);
+    font-weight: 500;
+}
+
+.foodPrice{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: clamp(16px, 4.8vw, 20px);
+    margin-left: 10px;
+    color: rgb(226, 19, 19);
+    font-weight: 700;
+    
+}
+@media (max-width: 321px){
+    .App{
+        width: 320px;
+    }
+}
+@media (min-width: 322px) and (max-width: 376px){
+    .App{
+        width: 375px;
+    }
+}
+@media (min-width: 377px){
+    .App{
+        width: 425px;
+    }
+}
