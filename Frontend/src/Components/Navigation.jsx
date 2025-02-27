@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-function Navigation() {
+function Navigation({ toggleCategories }) {
   return (
     <nav>
-        <Link to="/"><div className='LogoDiv'></div></Link>
-      </nav>
-    
-  )
+      <Link to="/">
+        <div className="LogoDiv" onClick={toggleCategories}></div>
+      </Link>
+    </nav>
+  );
 }
 
-export default Navigation
+export default Navigation;

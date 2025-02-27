@@ -1,44 +1,70 @@
-import {useNavigate} from 'react-router-dom';
-import '../Components/Navigation'
+import { useState } from "react";
+import Menus from "./Menus";
+import Burritos from "./Burritos";
+import Burgers from "./Burgers";
+import ByProducts from "./ByProducts";
+import Drinks from "./Drinks";
+import Sauces from "./Sauces";
+import Navigation from "../Components/Navigation";
 
 function Categories() {
+  const [activeCategory, setActiveCategory] = useState("");
+  const [showCategories, setShowCategories] = useState(true);
 
-    const navigate = useNavigate();
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+    setShowCategories(false);
+  };
+
+  const resetCategories = () => {
+    setActiveCategory("");
+    setShowCategories(true);
+  };
 
   return (
-<>
-    <div className='App'>
-      <div className='categories'>
-            <div onClick={() => navigate('/Menus')} className='categoriesOptions' id='optionsMenus'>
-            
-            <div className='triangle'></div>
+    <div className="App">
+      
+      <Navigation toggleCategories={resetCategories} />
+
+      {showCategories && (
+        <div className="categories">
+          <div onClick={() => handleCategoryClick("Menus")} className={`categoriesOptions ${activeCategory === "Menus" ? "active" : ""}`} id="optionsMenus">
+            <div className="triangle"></div>
             <span>menu</span>
-            </div>
-            <div onClick={() => navigate('/Burritos')} className='categoriesOptions' id='optionsBurritos'>
-            <div className='triangle'></div>
-            <span>burrito</span>
-            </div>
-            <div onClick={() => navigate('/Burgers')} className='categoriesOptions' id='optionsBurgers'>
-            <div className='triangle'></div>
-            <span>burger</span>
-            </div>
-            <div onClick={() => navigate('/ByProducts')} className='categoriesOptions' id='optionsByProducts'>
-            <div className='triangle'></div>
-            <span>sides</span>
-            </div>
-            <div onClick={() => navigate('/Drinks')} className='categoriesOptions' id='optionsDrinks'>
-            <div className='triangle'></div>
-            <span>drink</span>
-            </div> 
-            <div onClick={() => navigate('/Sauces')} className='categoriesOptions' id='optionsSauces'>
-            <div className='triangle'></div>
-             <span>sauce</span>
-            </div> 
-            
           </div>
+          <div onClick={() => handleCategoryClick("Burritos")} className={`categoriesOptions ${activeCategory === "Burritos" ? "active" : ""}`} id="optionsBurritos">
+            <div className="triangle"></div>
+            <span>burrito</span>
+          </div>
+          <div onClick={() => handleCategoryClick("Burgers")} className={`categoriesOptions ${activeCategory === "Burgers" ? "active" : ""}`} id="optionsBurgers">
+            <div className="triangle"></div>
+            <span>burger</span>
+          </div>
+          <div onClick={() => handleCategoryClick("ByProducts")} className={`categoriesOptions ${activeCategory === "ByProducts" ? "active" : ""}`} id="optionsByProducts">
+            <div className="triangle"></div>
+            <span>sides</span>
+          </div>
+          <div onClick={() => handleCategoryClick("Drinks")} className={`categoriesOptions ${activeCategory === "Drinks" ? "active" : ""}`} id="optionsDrinks">
+            <div className="triangle"></div>
+            <span>drink</span>
+          </div>
+          <div onClick={() => handleCategoryClick("Sauces")} className={`categoriesOptions ${activeCategory === "Sauces" ? "active" : ""}`} id="optionsSauces">
+            <div className="triangle"></div>
+            <span>sauce</span>
+          </div>
+        </div>
+      )}
+
+      <div className="category-content">
+        {activeCategory === "Menus" && <Menus />}
+        {activeCategory === "Burritos" && <Burritos />}
+        {activeCategory === "Burgers" && <Burgers />}
+        {activeCategory === "ByProducts" && <ByProducts />}
+        {activeCategory === "Drinks" && <Drinks />}
+        {activeCategory === "Sauces" && <Sauces />}
+      </div>
     </div>
-    
-    </>  )
+  );
 }
 
-export default Categories
+export default Categories;

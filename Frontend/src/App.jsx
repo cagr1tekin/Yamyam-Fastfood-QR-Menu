@@ -1,17 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import Content from './Components/Content'
+import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import Content from './Components/Content';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-        
-        <Content />
-        
-    </>
-  )
+    <Router> 
+      <Content />
+    </Router>
+  );
 }
 
-export default App
+export default App;
