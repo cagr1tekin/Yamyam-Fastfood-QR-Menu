@@ -23,9 +23,10 @@ app.use('/api/foods', foodRoutes);
 
 db();
 
-app.get("/", (req, res) => {
-    res.send("Server is running");
-});
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+  
 
 
 app.post('/api/login', (req, res) => {
