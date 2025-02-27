@@ -29,7 +29,7 @@ function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    window.location.href = '/login'; 
+    window.location.href = '/Login'; 
   };
 
   const handleSubmit = async (e) => {
