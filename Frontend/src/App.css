@@ -1,6 +1,6 @@
 .App{
     background-color: rgb(27, 23, 23);
-    width: 375px;
+    width: 100vw;
     height: auto;
 }
 .categories{
@@ -19,7 +19,6 @@
 .categoriesOptions{
     width: 100%;
     height: 250px;
-    margin-top: 0px;
     background-size: cover;
     display: flex;
     background-position: center;
@@ -36,12 +35,14 @@
 
 .categoriesOptions span{
     position: absolute;
-    color: rgb(204, 194, 153);
-    font-size: 50px;
-    font-family: "ITC Souvenir", serif;
+    color: rgb(184, 178, 149);
+    font-size: 45px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 4px 4px 4px rgb(0, 0, 0); 
     display: flex;
-    padding-left: 15px;
+    padding-left: 18px;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
 #optionsMenus{
@@ -65,9 +66,11 @@
 nav{
     background-color: rgb(27, 23, 23);
     width: 100%;
-    height: 85px;
+    height: 65px;
     display: flex;
     justify-content: center;
+    border-bottom: 25px groove rgb(184, 178, 149);
+
 }
 nav .LogoDiv{
     height: 85px;
@@ -136,9 +139,9 @@ footer{
 .foodDescription{
   width: 100%;
   text-align: center;
-  font-size: clamp(10px, 3.5vw, 13px);
-  color: rgb(83, 70, 70);
-  font-weight: 500;
+  font-size: clamp(10px, 3.2vw, 12px);
+  color: rgba(37, 32, 32, 0.8);
+  font-weight: 400;
 }
 .foodBottomContent{
     display: flex;
@@ -167,21 +170,6 @@ footer{
     font-size: clamp(16px, 4.8vw, 20px);
     margin-left: 10px;
     color: rgb(27, 23, 23);
-    font-weight: 600;
+    font-weight: 500;
     
-}
-@media (max-width: 321px){
-    .App{
-        width: 320px;
-    }
-}
-@media (min-width: 322px) and (max-width: 376px){
-    .App{
-        width: 375px;
-    }
-}
-@media (min-width: 377px){
-    .App{
-        width: 425px;
-    }
 }
