@@ -8,10 +8,8 @@ import foodRoutes from './routes/food.js';
 import bcrypt from 'bcryptjs'
 
 
-
-const PORT = process.env.PORT || 5000;
-
 config();
+const PORT = process.env.PORT;
 
 const app = express();
 app.use(cors());
@@ -51,3 +49,4 @@ app.post('/api/login', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 });
+

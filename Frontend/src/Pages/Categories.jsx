@@ -30,27 +30,27 @@ function Categories() {
         <div className="categories">
           <div onClick={() => handleCategoryClick("Menus")} className={`categoriesOptions ${activeCategory === "Menus" ? "active" : ""}`} id="optionsMenus">
             <div className="triangle"></div>
-            <span>menu</span>
+            <span>Menu</span>
           </div>
           <div onClick={() => handleCategoryClick("Burritos")} className={`categoriesOptions ${activeCategory === "Burritos" ? "active" : ""}`} id="optionsBurritos">
             <div className="triangle"></div>
-            <span>burrito</span>
+            <span>Burrito</span>
           </div>
           <div onClick={() => handleCategoryClick("Burgers")} className={`categoriesOptions ${activeCategory === "Burgers" ? "active" : ""}`} id="optionsBurgers">
             <div className="triangle"></div>
-            <span>burger</span>
+            <span>Burger</span>
           </div>
           <div onClick={() => handleCategoryClick("ByProducts")} className={`categoriesOptions ${activeCategory === "ByProducts" ? "active" : ""}`} id="optionsByProducts">
             <div className="triangle"></div>
-            <span>sides</span>
+            <span>Sides</span>
           </div>
           <div onClick={() => handleCategoryClick("Drinks")} className={`categoriesOptions ${activeCategory === "Drinks" ? "active" : ""}`} id="optionsDrinks">
             <div className="triangle"></div>
-            <span>drink</span>
+            <span>Drink</span>
           </div>
           <div onClick={() => handleCategoryClick("Sauces")} className={`categoriesOptions ${activeCategory === "Sauces" ? "active" : ""}`} id="optionsSauces">
             <div className="triangle"></div>
-            <span>sauce</span>
+            <span>Sauce</span>
           </div>
         </div>
       )}
