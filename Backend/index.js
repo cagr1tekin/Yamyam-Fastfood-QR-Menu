@@ -5,8 +5,12 @@ import bodyParser from 'body-parser';
 import { config } from 'dotenv';
 import db from './config/db.js';
 import foodRoutes from './routes/food.js';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 config();
 const PORT = process.env.PORT;

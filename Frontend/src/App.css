@@ -64,12 +64,12 @@
     background-image: url(img/Sauces.jpg);
 }
 nav{
-    background-color: rgb(27, 23, 23);
+    background-color: rgb(186, 175, 120)    ;
     width: 100%;
     height: 65px;
     display: flex;
     justify-content: center;
-    border-bottom: 25px groove rgb(184, 178, 149);
+    border-bottom: 5px inset rgb(246, 245, 238);
 
 }
 nav .LogoDiv{
