@@ -29,7 +29,7 @@ function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    window.location.href = '/Login'; 
+    window.location.href = '/#/Login'; 
   };
 
   const handleSubmit = async (e) => {
@@ -91,71 +91,104 @@ function Dashboard() {
   };
 
   return (
-    <div className="App">
-      <h1>Admin Panel</h1>
-      
-      <form onSubmit={editFood ? (e) => { e.preventDefault(); handleUpdate(); } : handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={newFood.name}
-          onChange={(e) => setNewFood({ ...newFood, name: e.target.value })}
-          placeholder="Yiyecek Adı"
-          required
-        />
-        <input
-          type="text"
-          name="description"
-          value={newFood.description}
-          onChange={(e) => setNewFood({ ...newFood, description: e.target.value })}
-          placeholder="Açıklama"
-          required
-        />
-        <input
-          type="text"
-          name="photo"
-          value={newFood.photo}
-          onChange={(e) => setNewFood({ ...newFood, photo: e.target.value })}
-          placeholder="Fotoğraf Linki(imgur vs.)"
-          required
-        />
-        <input
-          type="number"
-          name="price"
-          value={newFood.price}
-          onChange={(e) => setNewFood({ ...newFood, price: e.target.value })}
-          placeholder="Fiyat"
-          required
-        />
-        <select
-          name="type"
-          value={newFood.type}
-          onChange={(e) => setNewFood({ ...newFood, type: e.target.value })}
-          required
-        >
-          <option value="">Kategori Seç</option>
-          <option value="Menus">Menü</option>
-          <option value="Burgers">Burger</option>
-          <option value="Burritos">Burrito</option>
-          <option value="ByProducts">Yan Ürünler</option>
-          <option value="Sauces">Soslar</option>
-          <option value="Drinks">İçecekler</option>
-        </select>
-        <button type="submit">{editFood ? "Güncelle" : "Ekle"}</button>
-      </form>
-      <div>
-            <h1>Admin Paneli</h1>
-            <button onClick={handleLogout}>Çıkış Yap</button>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <h1>YamYam Admin Panel</h1>
+        <button onClick={handleLogout}>Çıkış Yap</button>
+      </header>
+
+      <form className="add-food-form" onSubmit={editFood ? (e) => { e.preventDefault(); handleUpdate(); } : handleSubmit}>
+        <div className="form-group">
+          <label>Yemek Adı:</label>
+          <input
+            type="text"
+            name="name"
+            value={newFood.name}
+            onChange={(e) => setNewFood({ ...newFood, name: e.target.value })}
+            required
+          />
         </div>
-      <ul>
+
+        <div className="form-group">
+          <label>Açıklama:</label>
+          <textarea
+            name="description"
+            value={newFood.description}
+            onChange={(e) => setNewFood({ ...newFood, description: e.target.value })}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Fotoğraf Linki:</label>
+          <input
+            type="text"
+            name="photo"
+            value={newFood.photo}
+            onChange={(e) => setNewFood({ ...newFood, photo: e.target.value })}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Fiyat:</label>
+          <input
+            type="number"
+            name="price"
+            value={newFood.price}
+            onChange={(e) => setNewFood({ ...newFood, price: e.target.value })}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Kategori:</label>
+          <select
+            name="type"
+            value={newFood.type}
+            onChange={(e) => setNewFood({ ...newFood, type: e.target.value })}
+            required
+          >
+            <option value="">Kategori Seç</option>
+            <option value="Menus">Menü</option>
+            <option value="Burgers">Burger</option>
+            <option value="Burritos">Burrito</option>
+            <option value="ByProducts">Yan Ürünler</option>
+            <option value="Sauces">Soslar</option>
+            <option value="Drinks">İçecekler</option>
+          </select>
+        </div>
+
+        <button type="submit" className="submit-button">
+          {editFood ? "Güncelle" : "Ekle"}
+        </button>
+      </form>
+
+      <div className="food-list">
         {menuData.map((food) => (
-          <li key={food._id}>
-            {food.name} - {food.price}TL ({food.type})
-            <button onClick={() => handleEdit(food)}>Düzenle</button>
-            <button onClick={() => handleDelete(food._id)}>Sil</button>
-          </li>
+          <div key={food._id} className="food-item">
+            <div className="food-item-header">
+              <span className="food-item-name">{food.name}</span>
+              <span className="food-item-price">{food.price}₺</span>
+            </div>
+            <p className="food-item-description">{food.description}</p>
+            <div className="food-item-category">Kategori: {food.type}</div>
+            {food.photo && (
+              <div className="food-item-photo">
+                <img src={food.photo} alt={food.name} />
+              </div>
+            )}
+            <div className="food-item-actions">
+              <button className="edit-button" onClick={() => handleEdit(food)}>
+                Düzenle
+              </button>
+              <button className="delete-button" onClick={() => handleDelete(food._id)}>
+                Sil
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

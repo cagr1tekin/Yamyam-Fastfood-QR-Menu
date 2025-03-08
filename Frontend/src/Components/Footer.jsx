@@ -1,9 +1,10 @@
-
 function Footer() {
   return (
     <footer>
-      <p> 2024 Yamyam Burger. Tüm Hakları Saklıdır.</p>
-      <p>Lezzet, her lokmada bizde!</p>
+      <div className="footer-content">
+        <div className="footer-brand">YamYam Fast Food</div>
+        <div className="footer-text">Lezzet, her lokmada bizde!</div>
+      </div>
     </footer>
   )
 }
