@@ -47,7 +47,7 @@ body {
     height: 0;
     border-top: 120px solid transparent;
     border-bottom: 0 solid transparent;
-    border-left: 300px solid rgba(27, 23, 23, 0.5);
+    border-left: 300px solid rgba(27, 23, 23, 0.8);
   }
 
 .categoriesOptions span{
@@ -63,7 +63,7 @@ body {
 }
 
 #optionsMenus{
-    background-image: url(img/Burgers.jpg);    
+    background-image: url(img/Menus.jpg);    
 }
 #optionsBurritos{
     background-image: url(img/Burittos.jpg);    
@@ -295,6 +295,7 @@ footer::before {
     object-fit: cover;
     margin: 5%;
     transition: transform 0.5s ease;
+    border-radius: 3px;
 }
 .menuOptions:hover .foodImg img {
     transform: scale(1.05);

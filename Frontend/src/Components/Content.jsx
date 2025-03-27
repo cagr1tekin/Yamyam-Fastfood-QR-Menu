@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Categories from "../Pages/Categories";
 import Burgers from "../Pages/Burgers";
 import Drinks from "../Pages/Drinks";
@@ -14,7 +14,13 @@ import Login from "../ProjectManagment/Login";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
-  return isAuthenticated ? children : <Navigate to="/Login" />;
+  const location = useLocation();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/Login" state={{ from: location }} replace />;
+  }
+
+  return children;
 };
 
 function Content() {

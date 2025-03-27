@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Login() {
@@ -8,6 +8,7 @@ function Login() {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,7 +17,8 @@ function Login() {
       
       if (response.status === 200) {
         localStorage.setItem('isAuthenticated', 'true');
-        navigate('/Dashboard');
+        const from = location.state?.from?.pathname || '/Dashboard';
+        navigate(from, { replace: true });
       }
     } catch (err) {
       setError('Şifre yanlış!');
