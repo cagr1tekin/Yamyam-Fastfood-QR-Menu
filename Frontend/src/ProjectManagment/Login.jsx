@@ -22,7 +22,7 @@ function Login() {
       }
     } catch (err) {
       setError('Şifre yanlış!');
-      setTimeout(() => setError(''), 3000); // 3 saniye sonra hata mesajını kaldır
+      setTimeout(() => setError(''), 3000);
     }
   };
 
@@ -33,8 +33,8 @@ function Login() {
   return (
     <div className="login-container">
       <div className="welcome-message">
-        <h2>Hoşgeldin Ahmethan</h2>
-        <p>YamYam Admin Paneline Giriş Yap</p>
+        <h2>YamYam Yönetim Paneline Hoşgeldiniz</h2>
+        <p>YamYam Yönetim Paneline Giriş Yap</p>
       </div>
       
       <form className="login-form" onSubmit={handleLogin}>

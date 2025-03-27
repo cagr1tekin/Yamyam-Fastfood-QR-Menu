@@ -150,9 +150,9 @@ function Dashboard() {
             required
           >
             <option value="">Kategori Seç</option>
-            <option value="Menus">Menü</option>
-            <option value="Burgers">Burger</option>
-            <option value="Burritos">Burrito</option>
+            <option value="Menus">Menüler</option>
+            <option value="Burgers">Burgerlar</option>
+            <option value="Burritos">Burritolar</option>
             <option value="ByProducts">Yan Ürünler</option>
             <option value="Sauces">Soslar</option>
             <option value="Drinks">İçecekler</option>
